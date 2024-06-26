@@ -1,7 +1,7 @@
 import { Flex, Typography } from 'antd';
 import AppCodeWidget from '@/components/common/app-code-widget/';
-import CoinsTable from '@/components/common/coins-table';
-import Dropdown from '@/components/ui/dropdown';
+import CoinsTable from '@/components/common/coins-table/';
+import Dropdown from '@/components/ui/dropdown/';
 import { useCoinsFilters } from '@/hooks/use-coins-filters.ts';
 import { currencies, orders } from '@/data/coins-table.ts';
 

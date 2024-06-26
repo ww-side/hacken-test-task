@@ -14,5 +14,26 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: '@/components/common',
+            message: 'Import only from index.ts in the common folder, except for specific allowed files.',
+          },
+          {
+            name: '@/components/ui',
+            message: 'Import only from index.ts in the ui folder.',
+          },
+        ],
+        patterns: [
+          {
+            group: ['@/components/**/**/*.tsx', '@/components/**/**/*.scss'],
+            message: 'Only import from index.ts in these folders.',
+          },
+        ],
+      },
+    ],
   },
 };
