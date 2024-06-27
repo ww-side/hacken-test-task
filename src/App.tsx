@@ -11,6 +11,8 @@ export default function App() {
     handleOrderClick,
     selectedOrderValue,
     selectedCurrencyValue,
+    currency,
+    order,
   } = useCoinsFilters();
 
   return (
@@ -30,7 +32,7 @@ export default function App() {
           onClick={handleOrderClick}
         />
       </Flex>
-      <CoinsTable />
+      <CoinsTable order={order} currency={currency} />
       <AppCodeWidget />
     </main>
   );

@@ -4,9 +4,14 @@ import { getColumns } from '@/components/common/coins-table/columns.tsx';
 import { useCoinsTable } from '@/hooks/use-coins-table.ts';
 import getCoinsData from '@/api/get-coins-data.ts';
 import st from './coins-table.module.scss';
-import { useCoinsFilters } from '@/hooks/use-coins-filters.ts';
 
-export default function CoinsTable() {
+export default function CoinsTable({
+  currency,
+  order,
+}: {
+  currency: string;
+  order: string;
+}) {
   const {
     pageSize,
     handleChangePageSize,
@@ -17,7 +22,6 @@ export default function CoinsTable() {
     setIsLoading,
     isLoading,
   } = useCoinsTable();
-  const { currency, order } = useCoinsFilters();
   const columns = getColumns(currency);
 
   useEffect(() => {

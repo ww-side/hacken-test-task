@@ -1,7 +1,7 @@
 export const appCode = `import { Flex, Typography } from 'antd';
 import AppCodeWidget from '@/components/common/app-code-widget/';
-import CoinsTable from '@/components/common/coins-table';
-import Dropdown from '@/components/ui/dropdown';
+import CoinsTable from '@/components/common/coins-table/';
+import Dropdown from '@/components/ui/dropdown/';
 import { useCoinsFilters } from '@/hooks/use-coins-filters.ts';
 import { currencies, orders } from '@/data/coins-table.ts';
 
@@ -11,6 +11,8 @@ export default function App() {
     handleOrderClick,
     selectedOrderValue,
     selectedCurrencyValue,
+    currency,
+    order,
   } = useCoinsFilters();
 
   return (
@@ -30,7 +32,7 @@ export default function App() {
           onClick={handleOrderClick}
         />
       </Flex>
-      <CoinsTable />
+      <CoinsTable order={order} currency={currency} />
       <AppCodeWidget />
     </main>
   );
