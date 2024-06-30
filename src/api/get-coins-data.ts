@@ -7,6 +7,6 @@ export default async function getCoinsData(
   pageSize: number,
 ) {
   return await axios.get(
-    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=${order}&per_page=${pageSize}&page=${page}&sparkline=false`,
+    `${import.meta.env.VITE_SERVER_URL}/coins/markets?vs_currency=${currency}&order=${order}&per_page=${pageSize}&page=${page}&sparkline=false`,
   );
 }
